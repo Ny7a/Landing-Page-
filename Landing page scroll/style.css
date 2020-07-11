@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #333;
+  color: white;
+  line-height: 1.6; /* The line-height CSS property sets the height of a line box. It's commonly used to set the distance between lines of text. */
+  height: 100vh;
+  /*overflow: hidden; /* takes away the scrollbars from the browser*/
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+
+  /* CODE THAT MAKES THE SMOOTH SCROLL WORK*/
+  /* CSS Smoothh scroll properties*/
+  /* overflow-y: scroll; /* vertical scroll*/
+  /* scroll-behavior: smooth; */
+  /* scroll-snap-type: y mandatory; */ /* this isn't cross browser compatible*/
+}
+
+.navbar {
+  position: fixed; /*so it will be at the top*/
+  top: 0;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.7); /* 0.7 is for alpha; creates transparency*/
+}
+
+.navbar ul {
+  display: flex; /* so inner list items can align up at the top forming our navigation pages*/
+  list-style: none;
+  width: 100%;
+  justify-content: center; /* so the whole ul for the nav items will be in the center; Home, about, service, content*/
+}
+
+.navbar ul li {
+  margin: 0 1rem;
+  padding: 1rem;
+}
+.navbar ul li a {
+  text-decoration: none; /* remove text underlining*/
+  text-transform: uppercase;
+  color: #f4f4f4; /* text color*/
+}
+
+/* hover for the nav */
+.navbar ul li a:hover {
+  color: skyblue;
+}
+
+/* the section will take up the whole viewport for each section*/
+section {
+  display: flex; /* each section will be flex boxes*/
+  flex-direction: column; /* we set the flex direction to column instead of row which is the defaul because, we don't want the h1 and paragraph (sections) to be aligned next to eachother in rows but rather we want them to be ontop of eachother*/
+  align-items: center; /* aligns everything to the center*/
+  justify-content: center; /* aligns both horizontally and vertically to center*/
+  text-align: center;
+  width: 100%;
+  height: 100vh; /*100vh; fills the page no matter how the browser is sized. |So each section will take up the whole page|*/
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+/* this stands for section paragragh*/
+section p {
+  font-size: 1.5rem;
+}
+
+/* Section Images */
+section#home {
+  background: url("https://source.unsplash.com/VRxo0yY-gyM/1600x900") no-repeat
+    center center/cover;
+}
+
+section#about {
+  background: url("https://source.unsplash.com/2aAHlfDOhJM/1600x900") no-repeat
+    center center/cover;
+}
+
+section#service {
+  background: url("https://source.unsplash.com/bZZp1PmHI0E/1600x900") no-repeat
+    center center/cover;
+}
+
+section#contact {
+  background: url("https://source.unsplash.com/K2tdx2mFDHc/1600x900") no-repeat
+    center center/cover;
+}
